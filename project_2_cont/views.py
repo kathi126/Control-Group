@@ -83,10 +83,6 @@ class Competition_Instructions_2_Example(Page):
 class Competition_Instructions_3(Page):
     pass
 
-class Beliefs(Page):
-    form_model = models.Player
-    form_fields = ['output0','output1','output2']
-
 class Questionnaire(Page):
     form_model = models.Player
     form_fields = ['luck', 'skill']
