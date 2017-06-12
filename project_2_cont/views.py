@@ -25,6 +25,7 @@ class Waiting3(WaitPage):
         order3 = np.random.choice(5,5,replace=False, p=[p.share3 for p in self.group.get_players()])
         self.session.vars['order3'] = order3
         self.group.set_switch3()
+        self.group.set_pc3()
 
 class Waiting4(WaitPage):
     def after_all_players_arrive(self):
@@ -32,6 +33,7 @@ class Waiting4(WaitPage):
         order4 = np.random.choice(5,5,replace=False, p=[p.share4 for p in self.group.get_players()])
         self.session.vars['order4'] = order4
         self.group.set_switch4()
+        self.group.set_pc4()
 
 class Waiting5(WaitPage):
     def after_all_players_arrive(self):
@@ -39,6 +41,7 @@ class Waiting5(WaitPage):
         order5 = np.random.choice(5,5,replace=False, p=[p.share5 for p in self.group.get_players()])
         self.session.vars['order5'] = order5
         self.group.set_switch5()
+        self.group.set_pc5()
 
 class Waiting6(WaitPage):
     def after_all_players_arrive(self):
@@ -46,6 +49,7 @@ class Waiting6(WaitPage):
         order6 = np.random.choice(5,5,replace=False, p=[p.share6 for p in self.group.get_players()])
         self.session.vars['order6'] = order6
         self.group.set_switch6()
+        self.group.set_pc6()
 
 class Waiting7(WaitPage):
     def after_all_players_arrive(self):
@@ -53,6 +57,7 @@ class Waiting7(WaitPage):
         order7 = np.random.choice(5,5,replace=False, p=[p.share7 for p in self.group.get_players()])
         self.session.vars['order7'] = order7
         self.group.set_switch7()
+        self.group.set_pc7()
 
 class Waiting8(WaitPage):
     def after_all_players_arrive(self):
@@ -61,6 +66,7 @@ class Waiting8(WaitPage):
         self.session.vars['order8'] = order8
         self.group.set_switch8()
         self.player.set_output()
+        self.group.set_pc8()
 
 class Introduction(Page):
     pass
@@ -736,23 +742,23 @@ class Beliefs8(Page):
 page_sequence = [
     Welcome,
     Welcome_wait,
-    Introduction,
-    Task_Instructions,
-    Round0,
-    Waiting,
-    Switch_Instructions,
-    Round1,
-    Waiting,
-    Feedback_Round1,
-    Technology_Instructions,
-    Round2,
-    Waiting,
-    Feedback_Round2,
-    Competition_Instructions_1,
-    Competition_Instructions_2_Example,
-    Competition_Instructions_3,
-    Beliefs3,
-    Waiting,
+#    Introduction,
+ #   Task_Instructions,
+ #   Round0,
+ #   Waiting,
+ #   Switch_Instructions,
+#    Round1,
+#    Waiting,
+ #   Feedback_Round1,
+ #   Technology_Instructions,
+ #   Round2,
+#    Waiting,
+ #   Feedback_Round2,
+ #   Competition_Instructions_1,
+ #   Competition_Instructions_2_Example,
+ #   Competition_Instructions_3,
+ #   Beliefs3,
+ #   Waiting,
     Round3,
     Waiting3,
     Feedback_Round3a,
