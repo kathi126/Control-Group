@@ -15,12 +15,12 @@ from otree.models import BaseSubsession, BaseGroup, BasePlayer
 author = 'AS,GS,HV,KS'
 
 doc = """
-Meritocracy Experiment - Control Group
+Meritocracy Experiment - Treatment Group
 """
 
 
 class Constants(BaseConstants):
-    name_in_url = 'project_2_cont'
+    name_in_url = 'project_2_treat'
     players_per_group = 5
     num_rounds = 1
 
@@ -138,20 +138,45 @@ class Group(BaseGroup):
             p.outputinswitch8 = p.timeinswitch8 / 10
             p.totaloutput8 = p.output8 + p.outputinswitch8
 
+    def set_pc3(self):
+        for p in self.get_players():
+            p.sharepc3 = p.share3 * 100
+
+    def set_pc4(self):
+        for p in self.get_players():
+            p.sharepc4 = p.share4 * 100
+
+    def set_pc5(self):
+        for p in self.get_players():
+            p.sharepc5 = p.share5 * 100
+
+    def set_pc6(self):
+        for p in self.get_players():
+            p.sharepc6 = p.share6 * 100
+
+    def set_pc7(self):
+        for p in self.get_players():
+            p.sharepc7 = p.share7 * 100
+
+    def set_pc8(self):
+        for p in self.get_players():
+            p.sharepc8 = p.share8 * 100
+
     def set_role(self):
         for p in self.get_players():
             if p.id_in_group == 1:
-                return 'A'
+                p.role = 'A'
             if p.id_in_group == 2:
-                return 'B'
+                p.role = 'B'
             if p.id_in_group == 3:
-                return 'C'
+                p.role = 'C'
             if p.id_in_group == 4:
-                return 'D'
+                p.role = 'D'
             if p.id_in_group == 5:
-                return 'E'
+                p.role = 'E'
 
 class Player(BasePlayer):
+    role = models.CharField()
     luck = models.PositiveIntegerField(
         choices=[
             [1, 'Not at all'],
@@ -216,6 +241,12 @@ class Player(BasePlayer):
     share6 = models.FloatField(default=0)
     share7 = models.FloatField(default=0)
     share8 = models.FloatField(default=0)
+    sharepc3 = models.FloatField(default=0)
+    sharepc4 = models.FloatField(default=0)
+    sharepc5 = models.FloatField(default=0)
+    sharepc6 = models.FloatField(default=0)
+    sharepc7 = models.FloatField(default=0)
+    sharepc8 = models.FloatField(default=0)
     switch1 = models.PositiveIntegerField(default=0)
     switch2 = models.PositiveIntegerField(default=0)
     switch3 = models.PositiveIntegerField(default=0)
