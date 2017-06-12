@@ -138,6 +138,19 @@ class Group(BaseGroup):
             p.outputinswitch8 = p.timeinswitch8 / 10
             p.totaloutput8 = p.output8 + p.outputinswitch8
 
+    def set_role(self):
+        for p in self.get_players():
+            if p.id_in_group == 1:
+                return 'A'
+            if p.id_in_group == 2:
+                return 'B'
+            if p.id_in_group == 3:
+                return 'C'
+            if p.id_in_group == 4:
+                return 'D'
+            if p.id_in_group == 5:
+                return 'E'
+
 class Player(BasePlayer):
     luck = models.PositiveIntegerField(
         choices=[
@@ -513,15 +526,3 @@ class Player(BasePlayer):
 
     def set_output(self):
         self.output = self.output0 + self.output1 + self.output2 + self.output3 + self.output4 + self.output5 + self.output6 + self.output7 + self.output8
-
-    def set_role(self):
-        if self.id_in_group == 1:
-            return 'A'
-        if self.id_in_group == 2:
-            return 'B'
-        if self.id_in_group == 3:
-            return 'C'
-        if self.id_in_group == 4:
-            return 'D'
-        if self.id_in_group == 5:
-            return 'E'
