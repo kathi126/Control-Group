@@ -10,13 +10,13 @@ from .models import Constants
 
 
 class Welcome(Page):
-    def before_next_page(self):
-        self.player.set_role()
-
-class Welcome_wait(WaitPage):
     pass
 
-class Waiting2(WaitPage):
+class Welcome_wait(WaitPage):
+    def after_all_players_arrive(self):
+        self.group.set_role()
+
+class Waiting(WaitPage):
     pass
 
 class Waiting3(WaitPage):
@@ -739,54 +739,54 @@ page_sequence = [
     Introduction,
     Task_Instructions,
     Round0,
-    Welcome_wait,
+    Waiting,
     Switch_Instructions,
     Round1,
-    Welcome_wait,
+    Waiting,
     Feedback_Round1,
     Technology_Instructions,
     Round2,
-    Waiting2,
+    Waiting,
     Feedback_Round2,
     Competition_Instructions_1,
     Competition_Instructions_2_Example,
     Competition_Instructions_3,
     Beliefs3,
-    Welcome_wait,
+    Waiting,
     Round3,
     Waiting3,
     Feedback_Round3a,
     Feedback_Round3b,
     Beliefs4,
-    Welcome_wait,
+    Waiting,
     Round4a,
     Round4b,
     Waiting4,
     Feedback_Round4a,
     Feedback_Round4b,
     Beliefs5,
-    Welcome_wait,
+    Waiting,
     Round5a,
     Round5b,
     Waiting5,
     Feedback_Round5a,
     Feedback_Round5b,
     Beliefs6,
-    Welcome_wait,
+    Waiting,
     Round6a,
     Round6b,
     Waiting6,
     Feedback_Round6a,
     Feedback_Round6b,
     Beliefs7,
-    Welcome_wait,
+    Waiting,
     Round7a,
     Round7b,
     Waiting7,
     Feedback_Round7a,
     Feedback_Round7b,
     Beliefs8,
-    Welcome_wait,
+    Waiting,
     Round8a,
     Round8b,
     Waiting8,
