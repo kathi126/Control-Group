@@ -15,12 +15,12 @@ from otree.models import BaseSubsession, BaseGroup, BasePlayer
 author = 'AS,GS,HV,KS'
 
 doc = """
-Meritocracy Experiment - Treatment Group
+Meritocracy Experiment - Control Group
 """
 
 
 class Constants(BaseConstants):
-    name_in_url = 'project_2_treat'
+    name_in_url = 'project_2_cont'
     players_per_group = 5
     num_rounds = 1
 
