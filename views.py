@@ -265,6 +265,7 @@ class Round4a(Page):
 
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][0] + 1 or self.player.id_in_group == self.session.vars['order3'][1] + 1
+        #this determines who is shown the templates with the advanced technology
 
 class Round4b(Page):
     timeout_seconds = Constants.t
@@ -305,6 +306,9 @@ class Round4b(Page):
                    ]
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][2] + 1 or self.player.id_in_group == self.session.vars['order3'][3] + 1 or self.player.id_in_group == self.session.vars['order3'][4] + 1
+        #this determines who is shown the basic technology templates
+
+
 
 class Round5a(Page):
     timeout_seconds = Constants.t
