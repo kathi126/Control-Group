@@ -207,8 +207,9 @@ class Player(BasePlayer):
         ],
         widget=widgets.RadioSelectHorizontal()
     )
+
+    # there is no advanced tech in round 3
     avgbelief3 = models.PositiveIntegerField()
-    mostprodATbelief3 = models.PositiveIntegerField()
     mostprodBTbelief3 = models.PositiveIntegerField()
     avgbelief4 = models.PositiveIntegerField()
     mostprodATbelief4 = models.PositiveIntegerField()
@@ -225,6 +226,8 @@ class Player(BasePlayer):
     avgbelief8 = models.PositiveIntegerField()
     mostprodATbelief8 = models.PositiveIntegerField()
     mostprodBTbelief8 = models.PositiveIntegerField()
+
+
     output = models.PositiveIntegerField(default=0)
     output0 = models.PositiveIntegerField(default=0)
     output1 = models.PositiveIntegerField(default=0)

@@ -710,7 +710,6 @@ class Feedback_Round8(Page):
 class Beliefs3(Page):
     form_model = models.Player
     form_fields = ['avgbelief3',
-                   'mostprodATbelief3',
                    'mostprodBTbelief3'
                    ]
 class Beliefs4(Page):
