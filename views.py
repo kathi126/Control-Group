@@ -596,10 +596,10 @@ class Round8a(Page):
 
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order7'][0] + 1 or self.player.id_in_group == self.session.vars['order7'][1] + 1
-    
+
     def before_next_page(self):
         self.player.set_output()
-        
+
 class Round8b(Page):
     timeout_seconds = Constants.t
     form_model = models.Player
@@ -643,7 +643,7 @@ class Round8b(Page):
 
     def before_next_page(self):
         self.player.set_output()
-        
+
 class Feedback_Round1(Page):
     pass
 
@@ -654,6 +654,11 @@ class Feedback_Round3a(Page):
     timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][0] + 1 or self.player.id_in_group == self.session.vars['order3'][1] + 1
+
+    def vars_for_template(self):
+        return {
+            'order3_test': self.session.vars['order3']
+        }
 
 class Feedback_Round4a(Page):
     timeout_seconds = Constants.tf
