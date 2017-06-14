@@ -48,9 +48,9 @@ padding: 1em;
 <div class="panel panel-primary">
   <div class="panel-heading"> In this period you solved: </div>
   <div class="panel-body">
-      {{ player.output3 }} strings. Therefore, in this period you earned {{ player.output3|c }} tokens. <br>
-      For the time spent in switch mode in this period you earned: {{ player.outputinswitch3|c }} tokens. <br>
-      <b>Your total earnings in this period are therefore: {{ player.totaloutput3|c }} tokens.</b> <br>
+      {{ player.output3|floatformat:0 }} strings. Therefore, in this period you earned {{ player.output3|c|floatformat:0 }} tokens. <br>
+      For the time spent in switch mode in this period you earned: {{ player.outputinswitch3|c|floatformat:0 }} tokens. <br>
+      <b>Your total earnings in this period are therefore: {{ player.totaloutput3|c|floatformat:0 }} tokens.</b> <br>
   </div>
 </div>
 
