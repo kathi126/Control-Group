@@ -225,6 +225,10 @@ class Round3(Page):
                    'additionaltime3'
                    ]
 
+    def before_next_page(self):
+        if self.player.output3 == 0:
+            self.player.output3 = 0.001
+
 class Round4a(Page):
     timeout_seconds = Constants.t
     form_model = models.Player
@@ -265,7 +269,10 @@ class Round4a(Page):
 
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][0] + 1 or self.player.id_in_group == self.session.vars['order3'][1] + 1
-        #this determines who is shown the templates with the advanced technology
+
+    def before_next_page(self):
+        if self.player.output4 == 0:
+            self.player.output4 = 0.001
 
 class Round4b(Page):
     timeout_seconds = Constants.t
@@ -306,9 +313,10 @@ class Round4b(Page):
                    ]
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][2] + 1 or self.player.id_in_group == self.session.vars['order3'][3] + 1 or self.player.id_in_group == self.session.vars['order3'][4] + 1
-        #this determines who is shown the basic technology templates
 
-
+    def before_next_page(self):
+        if self.player.output4 == 0:
+            self.player.output4 = 0.001
 
 class Round5a(Page):
     timeout_seconds = Constants.t
@@ -351,6 +359,9 @@ class Round5a(Page):
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order4'][0] + 1 or self.player.id_in_group == self.session.vars['order4'][1] + 1
 
+    def before_next_page(self):
+        if self.player.output5 == 0:
+            self.player.output5 = 0.001
 
 class Round5b(Page):
     timeout_seconds = Constants.t
@@ -393,6 +404,9 @@ class Round5b(Page):
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order4'][2] + 1 or self.player.id_in_group == self.session.vars['order4'][3] + 1 or self.player.id_in_group == self.session.vars['order4'][4] + 1
 
+    def before_next_page(self):
+        if self.player.output5 == 0:
+            self.player.output5 = 0.001
 
 class Round6a(Page):
     timeout_seconds = Constants.t
@@ -435,6 +449,9 @@ class Round6a(Page):
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order5'][0] + 1 or self.player.id_in_group == self.session.vars['order5'][1] + 1
 
+    def before_next_page(self):
+        if self.player.output6 == 0:
+            self.player.output6 = 0.001
 
 class Round6b(Page):
     timeout_seconds = Constants.t
@@ -477,6 +494,9 @@ class Round6b(Page):
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order5'][2] + 1 or self.player.id_in_group == self.session.vars['order5'][3] + 1 or self.player.id_in_group == self.session.vars['order5'][4] + 1
 
+    def before_next_page(self):
+        if self.player.output6 == 0:
+            self.player.output6 = 0.001
 
 class Round7a(Page):
     timeout_seconds = Constants.t
@@ -519,6 +539,10 @@ class Round7a(Page):
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order6'][0] + 1 or self.player.id_in_group == self.session.vars['order6'][1] + 1
 
+    def before_next_page(self):
+        if self.player.output7 == 0:
+            self.player.output7 = 0.001
+
 class Round7b(Page):
     timeout_seconds = Constants.t
     form_model = models.Player
@@ -559,6 +583,10 @@ class Round7b(Page):
 
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order6'][2] + 1 or self.player.id_in_group == self.session.vars['order6'][3] + 1 or self.player.id_in_group == self.session.vars['order6'][4] + 1
+
+    def before_next_page(self):
+        if self.player.output7 == 0:
+            self.player.output7 = 0.001
 
 class Round8a(Page):
     timeout_seconds = Constants.t
@@ -602,6 +630,8 @@ class Round8a(Page):
         return self.player.id_in_group == self.session.vars['order7'][0] + 1 or self.player.id_in_group == self.session.vars['order7'][1] + 1
 
     def before_next_page(self):
+        if self.player.output8 == 0:
+            self.player.output8 = 0.001
         self.player.set_output()
 
 class Round8b(Page):
@@ -646,6 +676,8 @@ class Round8b(Page):
         return self.player.id_in_group == self.session.vars['order7'][2] + 1 or self.player.id_in_group == self.session.vars['order7'][3] + 1 or self.player.id_in_group == self.session.vars['order7'][4] + 1
 
     def before_next_page(self):
+        if self.player.output8 == 0:
+            self.player.output8 = 0.001
         self.player.set_output()
 
 class Feedback_Round1(Page):
