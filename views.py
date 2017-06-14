@@ -659,11 +659,6 @@ class Feedback_Round3a(Page):
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][0] + 1 or self.player.id_in_group == self.session.vars['order3'][1] + 1
 
-    def vars_for_template(self):
-        return {
-            'order3_test': self.session.vars['order3']
-        }
-
 class Feedback_Round4a(Page):
     timeout_seconds = Constants.tf
     def is_displayed(self):
