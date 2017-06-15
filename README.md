@@ -11,7 +11,7 @@ This App allows you to create an Experiment with a Real Effort Task of Counting 
   SESSION_CONFIGS = [
     {
         'name': 'project_2_cont',
-        'display_name': "Letter Counting Task",
+        'display_name': "Letter Counting Task - Control Group",
         'num_demo_participants': 5,
         'app_sequence': ['project_2_cont'],
     },
