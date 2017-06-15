@@ -176,7 +176,6 @@ class Group(BaseGroup):
                 p.role = 'E'
 
 class Player(BasePlayer):
-    role = models.CharField()
     luck = models.PositiveIntegerField(
         choices=[
             [1, 'Not at all'],
