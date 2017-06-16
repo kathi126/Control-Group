@@ -162,7 +162,7 @@ class Group(BaseGroup):
         for p in self.get_players():
             p.sharepc8 = p.share8 * 100
 
-    def set_role(self):
+    def set_letter(self):
         for p in self.get_players():
             if p.id_in_group == 1:
                 p.letter = 'A'
