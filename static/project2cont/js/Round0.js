@@ -74,11 +74,13 @@ me.makeguess = function(x) {
     if (x >= length_0) {
         me.index = x;
         document.getElementById("id_output0").setAttribute("value",me.index);
-        
+
         var pattern = document.getElementsByClassName("jumbotron")[0];
         pattern.classList.add("hidden");
         var next = document.getElementsByClassName("next-button");
         next[0].classList.remove("hidden");
+
+        document.getElementById("done").innerHTML = "Congratulations, you finished the trial round. Please click Continue.";
     } else {
         me.index = x;
 
