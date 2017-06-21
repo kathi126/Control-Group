@@ -14,7 +14,7 @@ class Welcome(Page):
 
 class Welcome_wait(WaitPage):
     def after_all_players_arrive(self):
-        self.group.set_role()
+        self.group.set_letter()
 
 class Waiting(WaitPage):
     pass
@@ -632,7 +632,6 @@ class Round8a(Page):
     def before_next_page(self):
         if self.player.output8 == 0:
             self.player.output8 = 0.0000001
-        self.player.set_output()
 
 class Round8b(Page):
     timeout_seconds = Constants.t
@@ -687,52 +686,42 @@ class Feedback_Round2(Page):
     pass
 
 class Feedback_Round3a(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][0] + 1 or self.player.id_in_group == self.session.vars['order3'][1] + 1
 
 class Feedback_Round4a(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order4'][0] + 1 or self.player.id_in_group == self.session.vars['order4'][1] + 1
 
 class Feedback_Round5a(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order5'][0] + 1 or self.player.id_in_group == self.session.vars['order5'][1] + 1
 
 class Feedback_Round6a(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order6'][0] + 1 or self.player.id_in_group == self.session.vars['order6'][1] + 1
 
 class Feedback_Round7a(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order7'][0] + 1 or self.player.id_in_group == self.session.vars['order7'][1] + 1
 
 class Feedback_Round3b(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order3'][2] + 1 or self.player.id_in_group == self.session.vars['order3'][3] + 1 or self.player.id_in_group == self.session.vars['order3'][4] + 1
 
 class Feedback_Round4b(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order4'][2] + 1 or self.player.id_in_group == self.session.vars['order4'][3] + 1 or self.player.id_in_group == self.session.vars['order4'][4] + 1
 
 class Feedback_Round5b(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order5'][2] + 1 or self.player.id_in_group == self.session.vars['order5'][3] + 1 or self.player.id_in_group == self.session.vars['order5'][4] + 1
 
 class Feedback_Round6b(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order6'][2] + 1 or self.player.id_in_group == self.session.vars['order6'][3] + 1 or self.player.id_in_group == self.session.vars['order6'][4] + 1
 
 class Feedback_Round7b(Page):
-    timeout_seconds = Constants.tf
     def is_displayed(self):
         return self.player.id_in_group == self.session.vars['order7'][2] + 1 or self.player.id_in_group == self.session.vars['order7'][3] + 1 or self.player.id_in_group == self.session.vars['order7'][4] + 1
 
@@ -803,40 +792,40 @@ page_sequence = [
     Waiting3,
     Feedback_Round3a,
     Feedback_Round3b,
-#    Beliefs4,
-#    Waiting,
-#    Round4a,
-#    Round4b,
-#    Waiting4,
-#    Feedback_Round4a,
-#    Feedback_Round4b,
-#    Beliefs5,
-#    Waiting,
-#    Round5a,
-#    Round5b,
-#    Waiting5,
-#    Feedback_Round5a,
-#    Feedback_Round5b,
-#    Beliefs6,
-#    Waiting,
-#    Round6a,
-#    Round6b,
-#    Waiting6,
-#    Feedback_Round6a,
-#    Feedback_Round6b,
-#    Beliefs7,
-#    Waiting,
-#    Round7a,
-#    Round7b,
-#    Waiting7,
-#    Feedback_Round7a,
-#    Feedback_Round7b,
-#    Beliefs8,
-#    Waiting,
-#    Round8a,
-#    Round8b,
-#    Waiting8,
-#    Feedback_Round8,
+    Beliefs4,
+    Waiting,
+    Round4a,
+    Round4b,
+    Waiting4,
+    Feedback_Round4a,
+    Feedback_Round4b,
+    Beliefs5,
+    Waiting,
+    Round5a,
+    Round5b,
+    Waiting5,
+    Feedback_Round5a,
+    Feedback_Round5b,
+    Beliefs6,
+    Waiting,
+    Round6a,
+    Round6b,
+    Waiting6,
+    Feedback_Round6a,
+    Feedback_Round6b,
+    Beliefs7,
+    Waiting,
+    Round7a,
+    Round7b,
+    Waiting7,
+    Feedback_Round7a,
+    Feedback_Round7b,
+    Beliefs8,
+    Waiting,
+    Round8a,
+    Round8b,
+    Waiting8,
+    Feedback_Round8,
     Questionnaire,
     Thank_you,
 ]

@@ -35,25 +35,25 @@ padding: 1em;
 
 
 {% block title %}
-    Your Results in Period 4
+    Your Results in Round 4
 {% endblock %}
 
 {% block content %}
 
-<p class="alert alert-warning"> Your technology for the next periods is <strong>advanced</strong>.</p>
+<p class="alert alert-warning"> Your technology for the next round is <strong><em>advanced</em></strong>.</p>
 
 <br>
 
 
 <div class="panel panel-primary">
-  <div class="panel-heading"> In this period you solved: </div>
+  <div class="panel-heading"> Your earnings from this round: </div>
   <div class="panel-body">
-      {{ player.output6|floatformat:0 }} strings. Therefore, in this period you earned {{ player.output6|c|floatformat:0 }} tokens. <br>
-      For the time spent in switch mode in this period you earned: {{ player.outputinswitch6|c|floatformat:0 }} tokens. <br>
-      <b>Your total earnings in this period are therefore: {{ player.totaloutput6|c|floatformat:0 }} tokens.</b> <br>
+      You solved {{ player.output6|floatformat:0 }} sequences which earns you <strong>{{ player.output6|c|floatformat:0 }}</strong> Tokens.<br>
+      You spent {{player.timeinswitch6}} seconds in the <em>switch mode</em> which earns you <strong>{{ player.outputinswitch6|c|floatformat:1 }}</strong> Tokens.<br><br>
+      Your total earnings in this round are therefore: <strong>{{ player.totaloutput6|c|floatformat:1 }}</strong> Tokens. <br>
   </div>
 </div>
 
+{% next_button %}
 
 {% endblock %}
-

@@ -2,6 +2,8 @@
  ## Control Group
 This App allows you to create an Experiment with a Real Effort Task of Counting "a"s in a randomly generated string of characters of increasing length.
 
+You can find the app for the treatment group here: https://github.com/kathi126/Letter_Count_Treatment
+
 ### Installation
 
 1. In Terminal or PowerShell go to your oTree folder, for instance ```cd oTree```, and create the folder for the app with ```mkdir project_2_cont``` .
@@ -11,6 +13,7 @@ This App allows you to create an Experiment with a Real Effort Task of Counting 
   SESSION_CONFIGS = [
     {
         'name': 'project_2_cont',
+<<<<<<< HEAD
         'display_name': "Letter Counting Task - Control Group",
         'num_demo_participants': 5,
         'app_sequence': ['project_2_cont'],

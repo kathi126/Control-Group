@@ -25,7 +25,6 @@ class Constants(BaseConstants):
     num_rounds = 1
 
     t = 20
-    tf = 10
     tokensper_string = c(1)
     eurosper_token = 0.10
     secondsper_token = 10
@@ -137,6 +136,7 @@ class Group(BaseGroup):
             p.timeinswitch8 = p.switch8 * (Constants.t - p.switchtime8)
             p.outputinswitch8 = p.timeinswitch8 / 10
             p.totaloutput8 = p.output8 + p.outputinswitch8
+            p.set_output()
 
     def set_pc3(self):
         for p in self.get_players():
@@ -162,7 +162,7 @@ class Group(BaseGroup):
         for p in self.get_players():
             p.sharepc8 = p.share8 * 100
 
-    def set_role(self):
+    def set_letter(self):
         for p in self.get_players():
             if p.id_in_group == 1:
                 p.letter = 'A'
@@ -176,6 +176,7 @@ class Group(BaseGroup):
                 p.letter = 'E'
 
 class Player(BasePlayer):
+    pay = models.FloatField()
     letter = models.CharField()
     luck = models.PositiveIntegerField(
         choices=[
@@ -277,6 +278,7 @@ class Player(BasePlayer):
     switchtime6 = models.PositiveIntegerField(default=0)
     switchtime7 = models.PositiveIntegerField(default=0)
     switchtime8 = models.PositiveIntegerField(default=0)
+    timeinswitch = models.PositiveIntegerField(default=0)
     timeinswitch1 = models.PositiveIntegerField(default=0)
     timeinswitch2 = models.PositiveIntegerField(default=0)
     timeinswitch3 = models.PositiveIntegerField(default=0)
@@ -570,4 +572,8 @@ class Player(BasePlayer):
         self.totaloutput2 = self.output2 + self.outputinswitch2
 
     def set_output(self):
-        self.output = self.output0 + self.output1 + self.output2 + self.output3 + self.output4 + self.output5 + self.output6 + self.output7 + self.output8
+        self.output = self.output1 + self.output2 + self.output3 + self.output4 + self.output5 + self.output6 + self.output7 + self.output8
+        self.outputinswitch = self.outputinswitch1 + self.outputinswitch2 + self.outputinswitch3 + self.outputinswitch4 + self.outputinswitch5 + self.outputinswitch6 + self.outputinswitch7 + self.outputinswitch8
+        self.totaloutput = self.totaloutput1 + self.totaloutput2 + self.totaloutput3 + self.totaloutput4 + self.totaloutput5 + self.totaloutput6 + self.totaloutput7 + self.totaloutput8
+        self.timeinswitch = self.timeinswitch1 + self.timeinswitch2 + self.timeinswitch3 + self.timeinswitch4 + self.timeinswitch5 + self.timeinswitch6 + self.timeinswitch7 + self.timeinswitch8
+        self.pay = self.totaloutput * Constants.eurosper_token
