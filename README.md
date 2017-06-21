@@ -13,7 +13,6 @@ You can find the app for the treatment group here: https://github.com/kathi126/L
   SESSION_CONFIGS = [
     {
         'name': 'project_2_cont',
-<<<<<<< HEAD
         'display_name': "Letter Counting Task - Control Group",
         'num_demo_participants': 5,
         'app_sequence': ['project_2_cont'],
